@@ -1,81 +1,127 @@
 /* --- General Body Styles --- */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
   margin: 0;
   padding: 0;
+  /* Add a background image */
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* --- Overlay for better readability --- */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85); /* Light overlay for readability */
+  z-index: -1;
 }
 
 /* --- Main Container --- */
 .container {
-  max-width: 800px;
+  max-width: 850px;
   margin: 40px auto;
-  background-color: #fff;
-  padding: 30px 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  text-align: center; /* centers h1 and subtitle */
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-/* --- Name and Subtitle --- */
-h1 {
+/* --- Profile Photo --- */
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #0073b1;
+  margin-bottom: 15px;
+}
+
+/* --- Moving Name --- */
+.moving-name {
   margin: 10px 0;
-  color: #333;
-  font-size: 32px;
+  color: #1f2933;
+  font-size: 34px;
+  animation: moveName 2.5s ease-in-out infinite alternate;
 }
 
+/* --- Subtitle --- */
 .subtitle {
-  color: #666;
+  color: #4b5563;
   font-size: 18px;
   margin-bottom: 30px;
 }
 
-/* --- Section Styling --- */
+/* --- Sections --- */
 section {
   text-align: left;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 /* --- Section Titles --- */
 h2 {
-  color: #333;
-  border-bottom: 2px solid #e0e0e0;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
+  color: #1f2933;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
   font-size: 22px;
+}
+
+/* --- Paragraphs --- */
+p {
+  line-height: 1.6;
+  color: #374151;
 }
 
 /* --- Lists --- */
 ul {
-  list-style-type: disc;
   padding-left: 20px;
-  line-height: 1.6;
+  line-height: 1.7;
+  color: #374151;
 }
 
+/* --- Skills --- */
 .skills li {
   display: inline-block;
-  background: #e0e0e0;
-  padding: 5px 12px;
-  margin: 5px 5px 5px 0;
-  border-radius: 5px;
+  background: #e5e7eb;
+  padding: 6px 14px;
+  margin: 6px 6px 0 0;
+  border-radius: 20px;
+  font-size: 14px;
 }
 
 /* --- Links --- */
 a {
-  color: #0073b1; /* LinkedIn blue */
+  color: #0073b1;
   text-decoration: none;
+  font-weight: 500;
 }
+
 a:hover {
   text-decoration: underline;
 }
 
-/* --- Responsive --- */
+/* --- Animation --- */
+@keyframes moveName {
+  from {
+    transform: translateX(-15px);
+  }
+  to {
+    transform: translateX(15px);
+  }
+}
+
+/* --- Responsive Design --- */
 @media screen and (max-width: 600px) {
   .container {
-    padding: 20px;
+    padding: 25px;
   }
 
-  h1 {
+  .moving-name {
     font-size: 26px;
   }
 
@@ -83,3 +129,4 @@ a:hover {
     font-size: 20px;
   }
 }
+
